@@ -1,0 +1,64 @@
+<!-- Main Content -->
+<div id="content">
+
+    <!-- Topbar -->
+    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+      <!-- Sidebar Toggle (Topbar) -->
+      <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+        <i class="fa fa-bars"></i>
+      </button>
+
+
+      <!-- Topbar Search -->
+      <div class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+        <div class="input-group">
+          <input type="text" [(ngModel)]="searchingInput" (keyup.enter)="onButtonSearchClick()" class="form-control bg-light border-0 small" placeholder="Search for..."  aria-label="Search" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-primary" type="button" (click)="onButtonSearchClick()">
+              <i class="fas fa-search fa-sm"></i>
+            </button>
+          </div>
+        </div>
+    </div>
+
+    </nav>
+    <!-- End of Topbar -->
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+
+        <div *ngIf="searched" class="row">
+            <!-- Loop on the number of cats-->
+            <ng-container *ngFor="let item of nasaItems">
+              <div (click)="onItemClick(item.id)" class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-primary shadow h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                          <p class="m-0 font-weight-bold text-primary">{{item.title}}</p>
+                          
+                        </div>
+                        <div>
+                            <!-- image of the cat-->
+                            <img src="{{item.url}}"   class="img-fluid center" alt="Responsive image" >
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+
+
+
+
+    </div>
+    <!-- /.container-fluid -->
+
+  </div>
+  <!-- End of Main Content -->

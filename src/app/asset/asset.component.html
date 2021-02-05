@@ -1,0 +1,52 @@
+  <!-- Main Content -->
+  <div id="content">
+
+    <!-- Topbar -->
+    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+      <!-- Sidebar Toggle (Topbar) -->
+      <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+        <i class="fa fa-bars"></i>
+      </button>
+
+
+
+      <!-- Topbar Navbar -->
+
+
+    </nav>
+    <!-- End of Topbar -->
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+      <!-- Page Heading -->
+      <div align="center">
+        <div  class="d-sm-flex align-items-center justify-content-between mb-4">
+            <a class="nav-link" [routerLink]="['/search'] " class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-sm text-white-50"></i>Return to search page</a>
+          </div>
+        <h1  *ngIf="isImage" class=" center h1 mb-2 text-gray-800">Image</h1>
+        <h1  *ngIf="isVideo" class=" center h1 mb-2 text-gray-800">Video</h1>
+      
+      </div>
+      
+      <!-- DataTales Example -->
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+        </div>
+        <div class="card-body d-flex justify-content-center">
+            <img *ngIf="isImage"  src="{{urlMedia}}"   class="img-fluid center" alt="Responsive image" >
+
+            <video *ngIf="isVideo"  class="img-fluid center"  controls>
+                <source src="{{urlMedia}}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+        </div>
+      </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+  </div>
+  <!-- End of Main Content -->
